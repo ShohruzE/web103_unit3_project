@@ -1,33 +1,67 @@
-.app {
-    background: url('./assets/unitygrid.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    background-attachment: fixed;
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
 }
 
-header {
-    padding: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+    margin: 0;
 }
 
-.main-header {
-    height: 30vh;
-    width: 85vw;
-    align-items: flex-end;
-    position: relative;
-    z-index: 1;
+/* Remove list styles on ul, ol elements */
+ul,
+ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
-.header-buttons {
-    width: 30%;
-    display: flex;
-    justify-content: space-around;
+/* Set core root defaults */
+html:focus-within {
+    scroll-behavior: smooth;
 }
 
-.header-buttons button {
-    margin-right: 20px;
-    margin-left: 20px;
+/* Set core body defaults */
+body {
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+}
+
+/* Remove text decoration on links */
+a {
+    text-decoration: none;
+}
+
+/* Reset form element defaults */
+button,
+input,
+optgroup,
+select,
+textarea {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
 }

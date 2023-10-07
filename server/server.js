@@ -3,8 +3,11 @@ import path from 'path'
 import favicon from 'serve-favicon'
 import dotenv from 'dotenv'
 
-// import the router from your routes file
+import './config/dotenv.js';
 
+// import the router from your routes file
+import locationsRouter from './routes/locations.js';
+import concertsRouter from './routes/concerts.js';
 
 dotenv.config()
 
@@ -23,7 +26,8 @@ else if (process.env.NODE_ENV === 'production') {
 }
 
 // specify the api path for the server to use
-
+app.use('/api', locationsRouter);
+app.use('/api', concertsRouter);
 
 if (process.env.NODE_ENV === 'production') {
     app.get('/*', (_, res) =>
