@@ -10,9 +10,9 @@ const getLocations = async (req, res) => {
     }
 }
 
-const getConcertsByLocation = async (req, res) => {
+const getLocationById = async (req, res) => {
     try {
-        const response = await pool.query(`SELECT * FROM concerts WHERE location_id = $1 ORDER by id ASC`, [req.params.id]);
+        const response = await pool.query(`SELECT * FROM locations WHERE locationid = $1 ORDER by id ASC`, [req.params.id]);
         res.status(200).json(response.rows);
     }
     catch (error) {
@@ -22,5 +22,5 @@ const getConcertsByLocation = async (req, res) => {
 
 export default {
     getLocations,
-    getConcertsByLocation
+    getLocationById
 }

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom';
 import LocationsAPI from '../services/LocationsAPI'
 import '../css/Locations.css'
 
@@ -12,6 +13,7 @@ const Locations = () => {
             try {
                 const locationsData = await LocationsAPI.getAllLocations()
                 setLocations(locationsData)
+                console.log(locationsData)
             }
             catch (error) {
                 throw error
@@ -21,15 +23,16 @@ const Locations = () => {
 
 
     return (
-        <div>
-            {
-                locations.map((location, index) => {
-                    <div key={index}>
+        <div className="container">
+            {locations.map((location) => {
+                return (
+                    <article key={location.id}>
                         <h2>{location.name}</h2>
-                        <p>{location.description}</p>
-                    </div>
-                })
-            }
+                        <p>{location.address}</p>
+                        <Link to={`${location.id}`}>View concerts</Link>
+                    </article>
+                )
+            })}
         </div>
     )
 }

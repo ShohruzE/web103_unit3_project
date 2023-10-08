@@ -19,9 +19,17 @@ const Event = (props) => {
     }, [])
 
     return (
-        <div>
-
-        </div>
+        <article>
+            <header>
+                <h2>{props.artist}</h2>
+            </header>
+            <div>
+                <h3>{props.genre}</h3>
+                <p>{props.date}</p>
+                <p>{props.time}</p>
+                <p>{props.ticketprice}</p>
+            </div>
+        </article>
     )
 }
 
